@@ -301,7 +301,7 @@ nav {
 
 .flavour-card {
   background: #1a1a1a;
-  padding: 48px 32px 40px;
+  padding: 35px 25px 40px;
   position: relative;
   overflow: hidden;
   transition: background 0.3s;
@@ -321,22 +321,19 @@ nav {
 }
 
 .flavour-img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  display: block;
-  margin-bottom: 32px;
-  transition: transform 0.4s ease;
-}
 
-.flavour-img-placeholder {
   width: 100%;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-  font-size: 80px;
+
+  height: 430px;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin: 10px auto 50px;
+
+  transition: transform 0.4s ease;
+
 }
 
 .flavour-name {
