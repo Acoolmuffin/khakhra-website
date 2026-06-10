@@ -5,36 +5,22 @@
 }
 
 :root {
-
-  /* warm cream background */
   --cream: #F6EAD8;
-
-
-  /* keep premium black sections */
-  --black: #0D0D0D;
-
-
-  /* khakhra beige */
+  --black: #17110A;
   --warm: #E8CFA6;
-
-
-  /* roasted orange */
   --accent: #D96B32;
-
-
-  /* soft brown text */
   --mid: #7A634B;
-
 }
 html { scroll-behavior: smooth; }
 
 body {
+  background: #F6EAD8;
   background: var(--cream);
+  color: #17110A;
   color: var(--black);
-  font-family: 'Arial Black', Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+  font-family: Arial Black,
+    Arial, sans-serif;
 }
-
 
 /* ── NAV ── */
 
