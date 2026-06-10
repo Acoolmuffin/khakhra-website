@@ -209,11 +209,11 @@ nav {
 
   position:absolute;
 
-  width:65%;
-  height:670px;
+  width:57%;
+  height:700px;
 
-  right:0px;
-  top:85px;
+  right:-120px;
+  top:80px;
 
   object-fit:cover;
   object-position:right center;
