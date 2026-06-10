@@ -210,16 +210,17 @@ nav {
 
   position:absolute;
 
-  width:55%;
+  width:50%;
 
-  right:0px;
-  top:110px;
+  right:30px;
+  top:130px;
 
-  /* NO TILT */
-  transform:none;
+  transform:none !important;
+
+  animation:none !important;
 
   filter:
-  drop-shadow(0 25px 30px rgba(0,0,0,.18));
+  drop-shadow(0px 25px 30px rgba(0,0,0,.18));
 
   pointer-events:none;
 
