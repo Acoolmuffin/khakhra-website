@@ -5,13 +5,18 @@
 }
 
 :root {
-  --cream: #f5ede0;
-  --black: #0d0d0d;
-  --warm: #e8d5b8;
-  --accent: #c8401a;
-  --mid: #6b5b4e;
-}
 
+  --cream: #F6EAD8;
+
+  --black: #17110A;
+
+  --warm: #E8CFA6;
+
+  --accent: #D96B32;
+
+  --mid: #7A634B;
+
+}
 html { scroll-behavior: smooth; }
 
 body {
