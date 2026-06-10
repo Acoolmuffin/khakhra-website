@@ -11,16 +11,16 @@
   --accent: #D96B32;
   --mid: #7A634B;
 }
+
 html { scroll-behavior: smooth; }
 
 body {
-  background: #F6EAD8;
   background: var(--cream);
-  color: #17110A;
   color: var(--black);
-  font-family: Arial Black,
-    Arial, sans-serif;
+  font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
+
 
 /* ── NAV ── */
 
@@ -39,11 +39,26 @@ nav {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   font-size: 20px;
   font-weight: 900;
   letter-spacing: 4px;
   color: var(--black);
   text-decoration: none;
+}
+
+.brand-logo {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.nav-logo span {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 5px;
 }
 
 .nav-links {
@@ -159,13 +174,6 @@ nav {
   margin-top: 48px;
 }
 
-.hero-scroll-hint {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--mid);
-}
-
 .hero-bottom {
   display: flex;
   justify-content: space-between;
@@ -195,6 +203,28 @@ nav {
   margin-top: 4px;
 }
 
+
+/* ── FLOATING HERO KHAKHRA — BUG FIXED ── */
+
+.hero-khakhra {
+  position: absolute;
+  width: 52%;
+  right: 0;            /* was -70px which caused overflow bug */
+  top: 50%;
+  transform: translateY(-50%) rotate(-10deg);
+  filter: drop-shadow(0px 35px 35px rgba(0,0,0,.25));
+  animation: khakhraFloat 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes khakhraFloat {
+  0%, 100% { transform: translateY(-50%) rotate(-10deg); }
+  50%       { transform: translateY(calc(-50% - 25px)) rotate(-10deg); }
+}
+
+
+/* ── MARQUEE ── */
+
 .hero-marquee-wrap {
   background: var(--black);
   color: white;
@@ -214,7 +244,7 @@ nav {
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to   { transform: translateX(-50%); }
 }
 
 
@@ -321,19 +351,12 @@ nav {
 }
 
 .flavour-img {
-
   width: 100%;
-
   height: 430px;
-
   object-fit: contain;
-
   display: block;
-
   margin: 10px auto 50px;
-
   transition: transform 0.4s ease;
-
 }
 
 .flavour-name {
@@ -555,86 +578,6 @@ footer a {
 }
 
 
-
-/* 👇 ADD NEW STUFF HERE 👇 */
-
-
-/* HOUSE OF KHAKHRA LOGO */
-
-.nav-logo{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-
-.brand-logo{
-
-  width:55px;
-  height:55px;
-
-  object-fit:contain;
-}
-
-
-.nav-logo span{
-
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:5px;
-
-}
-
-
-
-/* FLOATING HERO KHAKHRA */
-
-
-.hero-khakhra{
-
-  position:absolute;
-
-  width:52%;
-
-  right:-70px;
-  top:120px;
-
-  transform:rotate(-10deg);
-
-  filter:
-  drop-shadow(0px 35px 35px rgba(0,0,0,.25));
-
-
-  animation:
-  khakhraFloat 4s ease-in-out infinite;
-
-}
-
-
-
-@keyframes khakhraFloat{
-
-
-0%,100%{
-
-transform:
-translateY(0)
-rotate(-10deg);
-
-}
-
-
-50%{
-
-transform:
-translateY(-25px)
-rotate(-10deg);
-
-}
-
-
-}
-
 /* ── ABOUT SPECIFIC ── */
 
 .about-hero {
@@ -794,8 +737,15 @@ rotate(-10deg);
 
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
+  .nav-logo span { font-size: 14px; letter-spacing: 2px; }
+  .brand-logo { width: 40px; height: 40px; }
   .hero { padding: 72px 24px 0; }
   .hero-headline { font-size: 60px; letter-spacing: -3px; }
+  .hero-khakhra { width: 70%; top: auto; bottom: 0; transform: rotate(-10deg); }
+  @keyframes khakhraFloat {
+    0%, 100% { transform: rotate(-10deg); }
+    50%       { transform: translateY(-20px) rotate(-10deg); }
+  }
   .statement { padding: 100px 24px; }
   .flavours { padding: 80px 24px; }
   .flavour-grid { grid-template-columns: repeat(2, 1fr); }
